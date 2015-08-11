@@ -25,7 +25,7 @@ foreman_facts_upload    true
 ## Facts whitelist / blacklisting
 # add following line if you want to upload only specific node attributes - only top-level attributes
 foreman_facts_whitelist ['lsb','network','cpu']
-# add following line if you want to avoid uploading specific node attributes - any part from the key will do
+# add following line if you want to avoid uploading specific node attributes - matches regex against full key
 foreman_facts_blacklist ['kernel','counters','interfaces::sit0']
 # enable caching of attributes - (full) upload will be performed only if attributes changed
 foreman_facts_cache_file '/var/cache/chef_foreman_cache.md5'

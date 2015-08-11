@@ -77,7 +77,7 @@ module ChefHandlerForeman
         else
           new                       = {}
           full_key = get_key(key, prefix)
-          if @blacklist.nil? || !@blacklist.any? { |black_key| full_key.include?(black_key) }
+          if @blacklist.nil? || !@blacklist.any? { |black_key| full_key.match(black_key) }
             new[full_key] = value
             result.push new
           end
